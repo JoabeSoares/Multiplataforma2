@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Gratuitos - EducaGrátis</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Adicione o Font Awesome para ícones (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>EducaGrátis</h1>
-            <p>Cursos gratuitos de qualidade para alunos de baixa renda</p>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="EducaGrátis" class="logo">
+            </div>
+            <div class="header-text">
+                <h1>EducaGrátis</h1>
+                <p>Cursos gratuitos de qualidade para alunos de baixa renda</p>
+            </div>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="cursos.html" class="active">Cursos</a></li>
                 <li><a href="forum.html">Fórum</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -25,59 +32,36 @@
     <main class="container">
         <h2 class="page-title">Nossos Cursos</h2>
         
+        <!-- Filtros melhorados -->
         <div class="filtros">
-            <input type="text" placeholder="Buscar curso...">
-            <select>
-                <option>Todas as categorias</option>
-                <option>Tecnologia</option>
-                <option>Idiomas</option>
-                <option>Administração</option>
-                <option>Saúde</option>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="busca-curso" placeholder="Buscar curso...">
+            </div>
+            <select id="filtro-categoria">
+                <option value="">Todas as categorias</option>
+                <!-- Opções serão preenchidas via JavaScript -->
+            </select>
+            <select id="filtro-dificuldade">
+                <option value="">Todos os níveis</option>
+                <option value="Iniciante">Iniciante</option>
+                <option value="Intermediário">Intermediário</option>
+                <option value="Avançado">Avançado</option>
             </select>
         </div>
 
-        <div class="cursos-grid">
-            <div class="curso-card">
-                <h3>Introdução à Programação</h3>
-                <p class="categoria">Tecnologia</p>
-                <p class="descricao">Aprenda os fundamentos da programação com Python.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
+        <!-- Container de cursos -->
+        <div class="cursos-grid" id="cursos-container">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
 
-            <div class="curso-card">
-                <h3>Inglês Básico</h3>
-                <p class="categoria">Idiomas</p>
-                <p class="descricao">Domine o essencial do inglês para comunicação cotidiana.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
-
-            <div class="curso-card">
-                <h3>Excel para Iniciantes</h3>
-                <p class="categoria">Administração</p>
-                <p class="descricao">Aprenda a usar o Excel desde o básico até funções intermediárias.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
-
-            <div class="curso-card">
-                <h3>Saúde Mental</h3>
-                <p class="categoria">Saúde</p>
-                <p class="descricao">Conheça técnicas para cuidar da sua saúde mental no dia a dia.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
-
-            <div class="curso-card">
-                <h3>Design Gráfico</h3>
-                <p class="categoria">Tecnologia</p>
-                <p class="descricao">Introdução ao design gráfico com ferramentas gratuitas.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
-
-            <div class="curso-card">
-                <h3>Empreendedorismo</h3>
-                <p class="categoria">Administração</p>
-                <p class="descricao">Como começar seu próprio negócio com pouco investimento.</p>
-                <a href="#" class="btn">Saiba mais</a>
-            </div>
+        <!-- Paginação -->
+        <div class="paginacao" id="paginacao">
+            <button id="prev-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <span id="page-info">Página 1</span>
+            <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </main>
 
@@ -87,5 +71,22 @@
             <p>Projeto sem fins lucrativos</p>
         </div>
     </footer>
+
+    <!-- Modal de Detalhes do Curso (hidden por padrão) -->
+    <div class="modal" id="curso-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <div class="modal-meta">
+                <span id="modal-categoria"></span>
+                <span id="modal-dificuldade"></span>
+                <span id="modal-duracao"></span>
+            </div>
+            <p id="modal-descricao"></p>
+            <button class="btn btn-inscrever">Inscrever-se</button>
+        </div>
+    </div>
+
+    <script src="js/cursos.js"></script>
 </body>
 </html>
