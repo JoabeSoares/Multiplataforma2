@@ -306,3 +306,150 @@ footer p {
         width: 100%;
     }
 }
+
+.carregando, .erro, .sem-resultados {
+    text-align: center;
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+.curso-card .meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+/* Estilos para os novos elementos */
+
+/* Filtros melhorados */
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.search-box input {
+    padding: 10px 10px 10px 35px;
+    width: 100%;
+}
+
+.filtros select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-width: 180px;
+}
+
+/* Skeleton Loading */
+.skeleton-card {
+    background: #f0f0f0;
+    border-radius: 8px;
+    height: 200px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+}
+
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.paginacao button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.paginacao button:hover {
+    background: var(--primary-color);
+}
+
+.paginacao button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.modal-meta span {
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.btn-inscrever {
+    background: var(--success-color);
+    margin-top: 20px;
+}
+
+.btn-inscrever:hover {
+    background: #219653;
+}

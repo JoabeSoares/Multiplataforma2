@@ -1,0 +1,28 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "titulo": "Introdução à Programação",
+      "categoria": "Tecnologia",
+      "descricao": "Aprenda os fundamentos da programação com Python.",
+      "duracao": "20 horas",
+      "dificuldade": "Iniciante"
+    },
+    {
+      "id": 2,
+      "titulo": "Inglês Básico",
+      "categoria": "Idiomas",
+      "descricao": "Domine o essencial do inglês para comunicação cotidiana.",
+      "duracao": "30 horas",
+      "dificuldade": "Iniciante"
+    },
+    {
+      "id": 3,
+      "titulo": "Excel para Iniciantes",
+      "categoria": "Administração",
+      "descricao": "Aprenda a usar o Excel desde o básico até funções intermediárias.",
+      "duracao": "15 horas",
+      "dificuldade": "Iniciante"
+    }
+  ]
+}
