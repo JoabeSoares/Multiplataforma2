@@ -1,70 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EducaGrátis - Cursos gratuitos para alunos de baixa renda</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
+      <div class="container">
+        <div class="header-container">
+          <img src="assets/image/logo2.png" alt="EducaGrátis" style="height: 200px" />
+          <div>
             <h1>EducaGrátis</h1>
             <p>Cursos gratuitos de qualidade para alunos de baixa renda</p>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="forum.html">Fórum</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="forum.html">Fórum</a></li>
+          <li><a href="#login" id="loginLink">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <section class="hero">
-            <h2>Transforme sua vida através da educação</h2>
-            <p>Acesse cursos gratuitos nas mais diversas áreas do conhecimento sem pagar nada.</p>
-            <a href="cursos.html" class="btn">Ver Cursos</a>
-        </section>
+      <section class="hero">
+        <h2>Transforme sua vida através da educação</h2>
+        <p>
+          Acesse cursos gratuitos nas mais diversas áreas do conhecimento sem
+          pagar nada.
+        </p>
+        <a href="cursos.html" class="btn">Ver Cursos</a>
+      </section>
 
-        <section class="destaques">
-            <h2>Como funciona?</h2>
-            <div class="passos">
-                <div class="passo">
-                    <h3>1. Escolha seu curso</h3>
-                    <p>Navegue por nossa lista de cursos gratuitos e escolha o que mais combina com você.</p>
-                </div>
-                <div class="passo">
-                    <h3>2. Cadastre-se gratuitamente</h3>
-                    <p>Preencha um formulário simples e comprove sua situação de baixa renda.</p>
-                </div>
-                <div class="passo">
-                    <h3>3. Comece a estudar</h3>
-                    <p>Acesse o conteúdo completo do curso e comece sua jornada de aprendizado.</p>
-                </div>
-            </div>
-        </section>
+      <section class="destaques">
+        <h2>Como funciona?</h2>
+        <div class="passos">
+          <div class="passo">
+            <h3>1. Escolha seu curso</h3>
+            <p>
+              Navegue por nossa lista de cursos gratuitos e escolha o que mais
+              combina com você.
+            </p>
+          </div>
+          <div class="passo">
+            <h3>2. Cadastre-se gratuitamente</h3>
+            <p>
+              Preencha um formulário simples e comprove sua situação de baixa
+              renda.
+            </p>
+          </div>
+          <div class="passo">
+            <h3>3. Comece a estudar</h3>
+            <p>
+              Acesse o conteúdo completo do curso e comece sua jornada de
+              aprendizado.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section class="depoimentos">
-            <h2>Depoimentos</h2>
-            <div class="depoimento">
-                <p>"Graças ao EducaGrátis consegui me qualificar e conseguir meu primeiro emprego!"</p>
-                <p class="autor">- Maria, 19 anos</p>
-            </div>
-            <div class="depoimento">
-                <p>"Nunca pensei que teria acesso a cursos de qualidade sem pagar nada. Estou muito grato!"</p>
-                <p class="autor">- João, 22 anos</p>
-            </div>
-        </section>
+      <section class="depoimentos">
+        <h2>Depoimentos</h2>
+        <div class="depoimento">
+          <p>
+            "Graças ao EducaGrátis consegui me qualificar e conseguir meu
+            primeiro emprego!"
+          </p>
+          <p class="autor">- Maria, 19 anos</p>
+        </div>
+        <div class="depoimento">
+          <p>
+            "Nunca pensei que teria acesso a cursos de qualidade sem pagar nada.
+            Estou muito grato!"
+          </p>
+          <p class="autor">- João, 22 anos</p>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>EducaGrátis &copy; 2023 - Todos os direitos reservados</p>
-            <p>Projeto sem fins lucrativos</p>
-        </div>
+      <div class="container">
+        <p>EducaGrátis &copy; 2023 - Todos os direitos reservados</p>
+        <p>Projeto sem fins lucrativos</p>
+      </div>
     </footer>
-</body>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="loginForm" class="auth-form">
+          <h2>Login</h2>
+          <input type="email" id="loginEmail" placeholder="E-mail" required />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit">Entrar</button>
+          <div class="form-footer">
+            Não tem uma conta? <a id="registerLink" href="#">Registre-se</a>
+          </div>
+          <div class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="registerForm" class="auth-form">
+          <h2>Criar Conta</h2>
+          <input
+            type="email"
+            id="registerEmail"
+            placeholder="E-mail"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Senha"
+            required
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirmar Senha"
+            required
+          />
+          <button type="submit">Cadastrar</button>
+          <div class="form-footer">
+            Já tem uma conta? <a id="loginLink" href="#">Faça login</a>
+          </div>
+          <div class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Adicione esses scripts antes do fechamento do body -->
+    <link rel="stylesheet" href="css/auth.css" />
+    <script src="js/auth.js"></script>
+  </body>
 </html>

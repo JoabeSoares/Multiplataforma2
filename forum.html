@@ -1,75 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fórum de Discussão - EducaGrátis</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
+      <div class="container">
+        <div class="header-container">
+          <img src="assets/image/logo2.png" alt="EducaGrátis"  />
+          <div>
             <h1>EducaGrátis</h1>
             <p>Cursos gratuitos de qualidade para alunos de baixa renda</p>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="forum.html" class="active">Fórum</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="forum.html" class="active">Fórum</a></li>
+          <li><a href="#login" id="loginLink">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <h2 class="page-title">Fórum de Discussão</h2>
-        
-        <div class="forum-actions">
-            <a href="#" class="btn">Nova Discussão</a>
-            <input type="text" placeholder="Buscar no fórum...">
+      <h2 class="page-title">Fórum de Discussão</h2>
+
+      <div class="forum-actions">
+        <a href="#" class="btn">Nova Discussão</a>
+        <input type="text" placeholder="Buscar no fórum..." />
+      </div>
+
+      <div class="forum-categorias">
+        <div class="categoria">
+          <h3>Cursos de Tecnologia</h3>
+          <div class="topico">
+            <h4><a href="#">Dúvida sobre exercício de Python</a></h4>
+            <p class="meta">Por: Carlos - 5 respostas - 2 dias atrás</p>
+          </div>
+          <div class="topico">
+            <h4><a href="#">Qual curso devo fazer primeiro?</a></h4>
+            <p class="meta">Por: Ana - 12 respostas - 1 semana atrás</p>
+          </div>
         </div>
 
-        <div class="forum-categorias">
-            <div class="categoria">
-                <h3>Cursos de Tecnologia</h3>
-                <div class="topico">
-                    <h4><a href="#">Dúvida sobre exercício de Python</a></h4>
-                    <p class="meta">Por: Carlos - 5 respostas - 2 dias atrás</p>
-                </div>
-                <div class="topico">
-                    <h4><a href="#">Qual curso devo fazer primeiro?</a></h4>
-                    <p class="meta">Por: Ana - 12 respostas - 1 semana atrás</p>
-                </div>
-            </div>
-
-            <div class="categoria">
-                <h3>Cursos de Idiomas</h3>
-                <div class="topico">
-                    <h4><a href="#">Material complementar para Inglês</a></h4>
-                    <p class="meta">Por: Pedro - 3 respostas - 3 dias atrás</p>
-                </div>
-            </div>
-
-            <div class="categoria">
-                <h3>Dúvidas Gerais</h3>
-                <div class="topico">
-                    <h4><a href="#">Como comprovar baixa renda?</a></h4>
-                    <p class="meta">Por: Juliana - 8 respostas - 2 semanas atrás</p>
-                </div>
-                <div class="topico">
-                    <h4><a href="#">Problemas para acessar o curso</a></h4>
-                    <p class="meta">Por: Marcos - 1 resposta - 1 dia atrás</p>
-                </div>
-            </div>
+        <div class="categoria">
+          <h3>Cursos de Idiomas</h3>
+          <div class="topico">
+            <h4><a href="#">Material complementar para Inglês</a></h4>
+            <p class="meta">Por: Pedro - 3 respostas - 3 dias atrás</p>
+          </div>
         </div>
+
+        <div class="categoria">
+          <h3>Dúvidas Gerais</h3>
+          <div class="topico">
+            <h4><a href="#">Como comprovar baixa renda?</a></h4>
+            <p class="meta">Por: Juliana - 8 respostas - 2 semanas atrás</p>
+          </div>
+          <div class="topico">
+            <h4><a href="#">Problemas para acessar o curso</a></h4>
+            <p class="meta">Por: Marcos - 1 resposta - 1 dia atrás</p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>EducaGrátis &copy; 2023 - Todos os direitos reservados</p>
-            <p>Projeto sem fins lucrativos</p>
-        </div>
+      <div class="container">
+        <p>EducaGrátis &copy; 2023 - Todos os direitos reservados</p>
+        <p>Projeto sem fins lucrativos</p>
+      </div>
     </footer>
-</body>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="loginForm" class="auth-form">
+          <h2>Login</h2>
+          <input type="email" id="loginEmail" placeholder="E-mail" required />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit">Entrar</button>
+          <div class="form-footer">
+            Não tem uma conta? <a id="registerLink" href="#">Registre-se</a>
+          </div>
+          <div class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="registerForm" class="auth-form">
+          <h2>Criar Conta</h2>
+          <input
+            type="email"
+            id="registerEmail"
+            placeholder="E-mail"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Senha"
+            required
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirmar Senha"
+            required
+          />
+          <button type="submit">Cadastrar</button>
+          <div class="form-footer">
+            Já tem uma conta? <a id="loginLink" href="#">Faça login</a>
+          </div>
+          <div class="error-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Adicione esses scripts antes do fechamento do body -->
+    <link rel="stylesheet" href="css/auth.css" />
+    <script src="js/auth.js"></script>
+  </body>
 </html>

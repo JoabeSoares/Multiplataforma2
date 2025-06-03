@@ -288,6 +288,34 @@ footer p {
     margin-bottom: 10px;
 }
 
+/* Estilos para o logo */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.logo {
+    margin: 0;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     nav ul {
